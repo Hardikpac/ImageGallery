@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <title>Image Gallery</title>
+    <style>
+        #linker:hover {background-color: yellow;color:black;}
+        #admin-pass:hover{background-color:white;color-black;s}
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class='container-fluid'>
+            <div class='row text-white bg-dark' style="padding-left:3%;">
+                    <div class="col-md-7 px-0 p-4">
+                        <h1 class="display-4 font-italic">Welcome to my<br>IMAGE GALLERY</h1>
+                        <p class="lead my-3">When words become unclear, I shall focus with photographs. 
+                        <br>When images become inadequate, I shall be content with silence.</p>
+                    </div>
+                    <div class = "col-md-4 align-content-center" style="margin-top: 2.80%;">
+                        <div class='col-md-10'>
+                            <img width='50%'  src="{% static 'images/camera.png' %}" alt="Image of logo">
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <span href="">
+                            <img width="50%" src="{% static 'images/admn.png' %}" alt="Admin" style="margin-left:23%;">
+                            <a class="nav-link"  href="/admin"><h6>Admin</h6></a>
+                        </span>
+                    </div>
+            </div>
+        </div>
+    </header>
+    <div class='contianer-fluid'>
+        <div class="row">
+            <div class="col-md-3" >
+                <h3 class="text-center alert alert-info">Content</h3>
+                <nav>
+                    <ul style='list-style-type:none;' >
+                        <li>
+                            <a class="nav-link text-center" href="games"><h6>Games</h6></a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a class="nav-link text-center" href="nature"><h6>Nature</h6></a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a class="nav-link text-center" href="celebs"><h6>Celebrities</h6></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-9">
+                {% block content%}
+                <h3 class="text-center alert alert-primary">Content Here</h3>
+                <hr style="margin-top:8%;">
+                    <p class="text-muted text-center font-weight-light blockquote">The images of the particular
+                    genre will be displayed here, if there is no photo<br>
+                    of that particular genre in the database, realted message will be shown.</p>
+                <hr style="margin-top:1%;">
+                {% endblock %}
+            </div>
+            
+        </div>
+    </div>
+    <footer class=" text-white bg-muted" style="marrgin-top:3%">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-4" id="linker">
+                <a class="nav-link text-center"  href="/images"><h6>Home</h6></a>
+            </div>
+            <div class="col-md-4" id="linker">
+                <a class="nav-link text-center"  href="/about"><h6>About</h6></a>
+            </div>
+            <div class="col-md-4" id="linker">
+                <a class="nav-link text-center"  href="/contact"><h6>Contact</h6></a>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h3 class="text-center alert alert-primary">{{gen}}</h3>
+    {% if there == True %}
+    {% for x in img %}
+    <div class="card" style="width: 15rem;display: inline-block;margin: 2% 10%">
+                    <img class="card-img-top" src="{{x.photo.url}}" style="height:12rem;" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{x.title}}</h5>
+                        <p class="card-text">{{x.desc}}</p>
+                    </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <hr style="margin-top:8%;">
+                    <p class="text-danger text-center font-weight-light blockquote">No Image Found</p>
+    <hr style="margin-top:1%;"
+    {% endif %}
+{% endblock content %}
