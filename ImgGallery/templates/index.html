@@ -14,7 +14,7 @@
       crossorigin="anonymous"
     />
 
-    <title>Image Gallery</title>
+    <title>{%block title%}Image Gallery{% endblock %}</title>
     <style>
         #linker:hover {background-color: yellow;color:black;}
         #admin-pass:hover{background-color:white;color-black;s}
@@ -30,16 +30,9 @@
                         <br>When images become inadequate, I shall be content with silence.</p>
                     </div>
                     <div class = "col-md-4 align-content-center" style="margin-top: 2.80%;">
-                        <div class='col-md-10'>
                             <img width='50%'  src="{% static 'images/camera.png' %}" alt="Image of logo">
-                        </div>
                     </div>
-                    <div class="col-md-1">
-                        <span href="">
-                            <img width="50%" src="{% static 'images/admn.png' %}" alt="Admin" style="margin-left:23%;">
-                            <a class="nav-link"  href="/admin"><h6>Admin</h6></a>
-                        </span>
-                    </div>
+                    
             </div>
         </div>
     </header>
