@@ -21,8 +21,8 @@ from Gallery.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('images/', images),
+    path('', images),
     path('about', about),
     path('contact', contact),
-    path('images/<str:gen>', imag),
+    path('<str:gen>', imag),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
